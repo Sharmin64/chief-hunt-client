@@ -1,12 +1,20 @@
 import React from 'react';
-import Header from '../../Home/Header/Header';
-import { Outlet } from 'react-router-dom';
+
+import restaurant from '../../assets/restaurant.jpg'
+
 
 const Main = () => {
   return (
-    <div>
-      <Header></Header>
-      <Outlet></Outlet>
+    <div className='container'>
+      
+      <h1>habri jabri outlete er content gulo  will llcome here</h1>
+     
+        <img className='w-full bg-fixed bg-contain' src={restaurant} alt="" />
+        <button style={{backgroundColor:'#ffe9e9'}} className="btn btn-ghost">Contact Us</button>
+   
+    
+
+      
     </div>
   );
 };
