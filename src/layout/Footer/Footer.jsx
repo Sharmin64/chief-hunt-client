@@ -1,20 +1,20 @@
 import React from 'react';
 import { FaFacebookF, FaFacebookMessenger, FaGoogle, FaTwitter } from "react-icons/fa";
-import { FcShipped} from "react-icons/fc";
+
 
 const Footer = () => {
   return (
-    <div  className="main my-container">
+    <div style={{backgroundColor:'#3a4664'}} className="main my-container">
     <div className="footer-header grid grid-cols-2 lg:grid-cols-5 gap-8 text-gray-50 mb-10 mt-32">
         <div>
             <h2 className='font-bold text-3xl text-lime-400'>Food Valley</h2>
             <br />
-          <div>
-          <li> <FaFacebookF></FaFacebookF></li>
-           <li> <FaFacebookMessenger></FaFacebookMessenger></li>
-          <li> <FaGoogle></FaGoogle></li>
-          <li> <FaTwitter></FaTwitter></li>
-          <li>Home Delivery <FcShipped></FcShipped></li>
+          <div className='list-none ps-5 space-y-10'>
+          <li> <FaFacebookF className='text-sky-500'></FaFacebookF></li>
+           <li> <FaFacebookMessenger className='text-violet-500'></FaFacebookMessenger></li>
+          <li> <FaGoogle className='text-lime-800'></FaGoogle></li>
+          <li> <FaTwitter className='text-blue-700'></FaTwitter></li>
+         
           </div>
             <br />
             <div className='flex items-center gap-2 w-30 h-10'>
@@ -83,13 +83,11 @@ const Footer = () => {
         </div>
     </div>
     <hr />
-    <div className=" flex justify-between items-center mt-12 mb-32 mx-auto">
-        <div>
-            <p className='font-normal text-base text-[#757575]'>@2023 Chef Recipe. All Rights Reserved</p>
+    <div className=" text-center mt-12 mb-32 mx-auto">
+        <div className=''>
+            <p className='font-normal text-base text-[#757575] mb-5'> © Copyright Protected Chef Recipe</p>
         </div>
-        <div>
-            <p className='font-normal text-base text-[#757575]'>Powered by Chef-Recipe</p>
-        </div>
+       
     </div>
 </div>
   );
