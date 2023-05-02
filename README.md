@@ -5,3 +5,5 @@
 ## tailwind install
 
 ## daisyui install
+
+## react icons install

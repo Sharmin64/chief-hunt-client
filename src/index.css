@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.bg-banner {
+  background-image: url('./assets/restaurant.jpg');
+  background-repeat: no-repeat;
+  object-fit: cover;
+  position: relative;
+}
