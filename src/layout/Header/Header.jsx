@@ -14,7 +14,8 @@ const Header = () => {
     <div className="flex items-center list-none space-x-6">
      <Link to='/'><li>Home</li></Link>
     <Link to='/blog'> <li>Blog</li></Link>
-    <Link> <li>Login</li></Link>
+    <Link to='/login'> <li>Login</li></Link>
+    <Link to='/about'> <li>About</li></Link>
     </div>
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
