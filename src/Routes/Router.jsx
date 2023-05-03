@@ -9,6 +9,9 @@ import Register from "../Pages/AuthLogin/Register/Register";
 import ExtraLayout from "../layout/ExtraLayout/ExtraLayout";
 import About from "../Pages/About/About";
 
+import CategoriesLayout from "../layout/CategoriesLayout/CategoriesLayout";
+import FoodDetails from "../Pages/FoodDetails/FoodDetails";
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -21,6 +24,17 @@ const router = createBrowserRouter([
       },
     
      
+    ]
+  },
+  {
+    path: '/categories',
+    element: <CategoriesLayout/>,
+    children: [
+      {
+        path: ':id',
+        element: <FoodDetails/>,
+        loader: ({params})=> fetch(`http://localhost:9001/categories/${params.id}`)
+      }
     ]
   },
   {

@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaFacebookF, FaFacebookMessenger, FaGoogle, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaFacebookMessenger, FaTwitter } from "react-icons/fa";
+import { FcGoogle} from "react-icons/fc";
 
 
 const Footer = () => {
@@ -12,7 +13,7 @@ const Footer = () => {
           <div className='list-none ps-5 space-y-10'>
           <li> <FaFacebookF className='text-sky-500'></FaFacebookF></li>
            <li> <FaFacebookMessenger className='text-violet-500'></FaFacebookMessenger></li>
-          <li> <FaGoogle className='text-lime-800'></FaGoogle></li>
+          <li> <FcGoogle></FcGoogle></li>
           <li> <FaTwitter className='text-blue-700'></FaTwitter></li>
          
           </div>
