@@ -9,7 +9,6 @@ import Register from "../Pages/AuthLogin/Register/Register";
 import ExtraLayout from "../layout/ExtraLayout/ExtraLayout";
 import About from "../Pages/About/About";
 
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,6 +19,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Main></Main>
       },
+    
      
     ]
   },

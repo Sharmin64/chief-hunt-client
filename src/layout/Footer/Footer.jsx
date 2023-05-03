@@ -5,9 +5,9 @@ import { FaFacebookF, FaFacebookMessenger, FaGoogle, FaTwitter } from "react-ico
 const Footer = () => {
   return (
     <div style={{backgroundColor:'#3a4664'}} className="main my-container">
-    <div className="footer-header grid grid-cols-2 lg:grid-cols-5 gap-8 text-gray-50 mb-10 mt-32">
+    <div className="footer-header grid grid-cols-2 lg:grid-cols-5 gap-8 text-gray-50 mb-5 mt-10">
         <div>
-            <h2 className='font-bold text-3xl text-lime-400'>Food Valley</h2>
+            <h2 className='font-bold text-3xl text-[#ffe9e9]'>Food Valley</h2>
             <br />
           <div className='list-none ps-5 space-y-10'>
           <li> <FaFacebookF className='text-sky-500'></FaFacebookF></li>
@@ -25,7 +25,7 @@ const Footer = () => {
             <h4 className='font-semibold text-xl'>Company</h4>
             <br />
             <br />
-            <div className='font-normal text-base text-[#757575]'>
+            <div className='font-normal text-base text-[#fffaf0]'>
                 <p>About Us</p>
                 <br />
                 <p>Work</p>
@@ -41,7 +41,7 @@ const Footer = () => {
             <h4 className='font-semibold text-xl'>Product</h4>
             <br />
             <br />
-            <div className='font-normal text-base text-[#757575]'>
+            <div className='font-normal text-base text-[#fffaf0]'>
                 <p>Prototype</p>
                 <br />
                 <p>Plans & Pricing</p>
@@ -57,7 +57,7 @@ const Footer = () => {
             <h4 className='font-semibold text-xl'>Support</h4>
             <br />
             <br />
-            <div className='font-normal text-base text-[#757575]'>
+            <div className='font-normal text-base text-[#fffaf0]'>
                 <p>Help Desk</p>
                 <br />
                 <p>Sales</p>
@@ -73,7 +73,7 @@ const Footer = () => {
             <h4 className='font-semibold text-xl'>Contact</h4>
             <br />
             <br />
-            <div className='font-normal text-base text-[#757575] '>
+            <div className='font-normal text-base text-[#fffaf0] '>
                 <p>524 Broadway , NYC</p>
                 <br />
                 <p>+1 777 - 978 - 5570</p>
@@ -85,7 +85,7 @@ const Footer = () => {
     <hr />
     <div className=" text-center mt-12 mb-32 mx-auto">
         <div className=''>
-            <p className='font-normal text-base text-[#757575] mb-5'> © Copyright Protected Chef Recipe</p>
+            <p className='font-normal text-base text-[#fffaf0] mb-5'> © Copyright Protected Chef Recipe</p>
         </div>
        
     </div>
