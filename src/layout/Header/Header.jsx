@@ -7,7 +7,13 @@ import About from './../../Pages/About/About';
 
 
 const Header = () => {
-  const {user} = useContext(AuthContext)
+  const {user,logOut} = useContext(AuthContext)
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+    .catch(error=> console.log(error))
+  }
   return (
     <nav className='my-nav'>
     <div className="navbar ">
@@ -37,7 +43,7 @@ const Header = () => {
         </li>}
         <li><a>Settings</a></li>
               {user ?
-               <Link><li>Logout</li></Link> :
+               <Link><li> <button onClick={handleLogOut}>Logout</button></li></Link> :
                 <Link to='/login'><li>Login</li></Link>
               }
       </ul>

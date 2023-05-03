@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+
 
 const Register = () => {
 
@@ -25,59 +26,52 @@ const Register = () => {
     })
   }
   return (
-    <div className='mt-16'>
-    <div className="hero min-h-screen bg-base-200">
- <div className="hero-content flex-col lg:flex-row-reverse">
-   <div className="text-center lg:text-left">
-     <h1 className="text-5xl font-bold">Register Now!</h1>
-     <p className="py-6">For knowing the best recipe of our best chef please login here and get the recipe.</p>
-   </div>
-   <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-     <div className="card-body">
-       <div onSubmit={handleRegister} type='submit' className="form-control">
-         <label className="label">
-           <span className="label-text">Name</span>
-         </label>
-         <input type="text" placeholder="name" className="input input-bordered" />
-       </div>
-       <div className="form-control" type='submit'>
-         <label className="label">
-           <span className="label-text">Email</span>
-         </label>
-         <input type="text" placeholder="email" className="input input-bordered" />
-       </div>
-       <div className="form-control" type='submit'>
-         <label className="label">
-           <span className="label-text">Photo URL</span>
-         </label>
-         <input type="text" placeholder="photo url" className="input input-bordered" />
-       </div>
-       <div className="form-control" type='submit'>
-         <label className="label">
-           <span className="label-text">Password</span>
-         </label>
-         <input type="password" placeholder="password" className="input input-bordered" />
-         <label className="label">
-           <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-         </label>
-              </div>
-              {/*<div className="form-control w-52">
-    <label className="cursor-pointer label">
-      <span className="label-text">Remember me</span> 
-      <input type="checkbox" className="toggle toggle-secondary" checked />
-    </label>
-  </div>*/}
-       <div className="form-control mt-6" type='submit'>
-         <button className="btn btn-primary">Register</button>
-             </div>
-             <label className="label">
-          <p>Already have an account? Please <Link to='/login' className='link-btn'><button className="btn bg-[#bababa]">Login</button></Link></p>
-         </label>
-     </div>
-   </div>
- </div>
-</div>
-   </div>
+
+<section className="bg-gray-50 dark:bg-gray-900">
+            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+
+                <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Create an account
+                        </h1>
+                        <form onSubmit={handleRegister} className="space-y-4 md:space-y-6" action="#">
+                            <div>
+                                <label type="text" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
+                                <input type="name" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name" required="" />
+                            </div>
+                            <div>
+                                <label type="text" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
+                                <input type="photo" name="photo" id="photo" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="photo url" />
+                            </div>
+                            <div>
+                                <label type="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                                <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="email" required="" />
+                            </div>
+                            <div>
+                                <label type="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                <input type="password" name="password" id="password" placeholder="password" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-start">
+                                    <div className="flex items-center h-5">
+                                        <input /*onClick={() => setAccepted(!accepted)}*/ id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                    </div>
+                                    <div className="ml-3 text-sm">
+                                        <label type="accept" className="text-gray-500 dark:text-gray-300">accept<a className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> terms and conditions</a></label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button /*disabled={!accepted}*/ type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign up</button>
+                            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                                Already have an account? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign in</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
   );
 };
 
