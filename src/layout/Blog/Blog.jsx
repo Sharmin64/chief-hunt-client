@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
   return (
-    <div className='text-center container mx-auto bg-[#e8f3ff]'>
+    <div className='text-center container mx-auto bg-[#e8f3ff] mt-12'>
       <h1 className='text-6xl text-yellow-900'>Blog Page</h1>
       <div className='card content-center border-spacing-2 rounded p-5'>
         <h2 className='text-3xl text-amber-500'>Tell us differences between uncontrolled and controlled components</h2>

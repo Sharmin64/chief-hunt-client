@@ -8,10 +8,10 @@ const Header = () => {
     <nav className='my-nav'>
     <div className="navbar">
   <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl text-[#ffe9e9]">Food Valley</a>
+    <a className="btn btn-ghost normal-case text-xl text-[#003044]">Food Valley</a>
   </div>
   <div className="flex-none gap-2">
-    <div className="flex items-center list-none space-x-6 text-[#ffe9e9]">
+    <div className="flex items-center list-none space-x-6 text-[#ff8440]">
      <Link to='/'><li>Home</li></Link>
     <Link to='/blog'> <li>Blog</li></Link>
     <Link to='/login'> <li>Login</li></Link>
