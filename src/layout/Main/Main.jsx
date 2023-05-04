@@ -1,6 +1,8 @@
 import React from 'react';
 import FoodCard from '../FoodCard/FoodCard';
 import chef from '../../assets/chef.jpg'
+import SwipePage from '../../Pages/SwipePage/SwipePage';
+
 
 const Main = () => {
   return (
@@ -16,7 +18,9 @@ const Main = () => {
       <div className='mt-5 mx-auto'>
         <FoodCard></FoodCard>
 </div>
-      
+      <div className='mt-20 mx-auto min-w-full'>
+        <SwipePage></SwipePage>
+      </div>
     </div>
   );
 };

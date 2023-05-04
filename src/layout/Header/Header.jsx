@@ -16,11 +16,11 @@ const Header = () => {
   }
   return (
     <nav className='my-nav'>
-    <div className="navbar ">
+    <div className="navba flex justify-center  lg:justify-between flex-col md:flex-row ">
   <div className="flex-1">
     <a className="btn btn-ghost normal-case text-xl text-[#003044]">Food Valley</a>
   </div>
-  <div className="flex-none justify-around gap-2">
+  <div className="flex justify-around gap-2 sm:grid-row-1 hidden md:flex items-center space-x-1">
     <div className="flex items-center list-none space-x-6 text-[#ff8440]">
      <NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/'><li>Home</li></NavLink>
     <NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/blog'> <li>Blog</li></NavLink>
@@ -45,18 +45,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
-{/*<NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/'>Home</NavLink>*/ }
-
-{/*<div className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-     
-
-
-
-
-<div>
-
-</div>
-</div>*/}

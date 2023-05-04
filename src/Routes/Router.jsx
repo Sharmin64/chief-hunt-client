@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: ':id',
         element: <PrivateRoute><FoodDetails/></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:9001/categories/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-10-server-side-chef-hunter-sharmin64.vercel.app/categories/${params.id}`)
       }
     ]
   },
