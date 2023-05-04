@@ -7,3 +7,5 @@
 ## daisyui install
 
 ## react icons install
+
+## npm install react-spinners

@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Pages/Provider/AuthProvider';
+import { Navigate, useLocation } from 'react-router-dom';
+import { CircleLoader } from 'react-spinners';
 
-const PrivateRoute = () => {
-  return (
-    <div>
-      <h3>proviate route</h3>
-    </div>
-  );
+const PrivateRoute = ({children}) => {
+  const { user,loading } = useContext(AuthContext)
+  const location = useLocation()
+  console.log(location);
+  if (loading) {
+   return <CircleLoader color="#36d7b7" />
+ }
+
+
+  if (user) {
+    return children
+  }
+  return <Navigate state={{from:location}}to='/login' replace></Navigate>
 };
 
 export default PrivateRoute;

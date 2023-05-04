@@ -11,6 +11,7 @@ import About from "../Pages/About/About";
 
 import CategoriesLayout from "../layout/CategoriesLayout/CategoriesLayout";
 import FoodDetails from "../Pages/FoodDetails/FoodDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: ':id',
-        element: <FoodDetails/>,
+        element: <PrivateRoute><FoodDetails/></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:9001/categories/${params.id}`)
       }
     ]
