@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 //import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 
 const Register = () => {
 
 
-  const {createUser}=useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
+    const [accepted,setAccepted]=useState(false)
 
   const handleRegister = event => {
     event.preventDefault()
@@ -24,7 +26,11 @@ const Register = () => {
       .catch(error => {
       console.log(error);
     })
-  }
+    }
+    
+    const handleAccepted = event => {
+       setAccepted(event.target.checked);
+    }
   return (
 
 <section className="bg-gray-50 dark:bg-gray-900">
@@ -55,7 +61,7 @@ const Register = () => {
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start">
                                     <div className="flex items-center h-5">
-                                        <input /*onClick={() => setAccepted(!accepted)}*/ id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                        <input onClick={handleAccepted} id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
                                     </div>
                                     <div className="ml-3 text-sm">
                                         <label type="accept" className="text-gray-500 dark:text-gray-300">accept<a className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> terms and conditions</a></label>
@@ -63,9 +69,9 @@ const Register = () => {
                                 </div>
 
                             </div>
-                            <button /*disabled={!accepted}*/ type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign up</button>
+                            <button disabled={!accepted} type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign up</button>
                             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                                Already have an account? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign in</a>
+                                Already have an account? <Link to='/login' className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign in</Link>
                             </p>
                         </form>
                     </div>

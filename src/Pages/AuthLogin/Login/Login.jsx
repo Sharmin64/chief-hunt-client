@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
-//import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
-import { useLocation, useNavigate } from 'react-router-dom';
-//import Login from './Login';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
+import app from '../../../firebase/firebase.config';
 
 const Login = () => {
+    const auth = getAuth(app)
+    const googleProvider = new GoogleAuthProvider()
+    const githubProvider =new GithubAuthProvider()
     const { signIn } = useContext(AuthContext)
+    const [user,setUser]=useState(null)
     
     const navigate = useNavigate()
     const location = useLocation()
@@ -26,10 +30,45 @@ const Login = () => {
       .catch(error => {
       console.log(error);
     })
-  }
+    }
+    
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const loggedInUser = result.user
+                console.log(loggedInUser);
+                setUser(loggedInUser)
+            })
+            .catch(error => {
+                console.log( "error",error.message);
+        })
+    }
+    const handleGithubSignIn = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                setUser(loggedUser)
+            })
+            .catch(error => {
+            console.log('error',error.message);
+        })
+}
+
+
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(result => {
+                console.log(result);
+                setUser(null)
+            })
+            .catch(error => {
+            console.log(error);
+        })
+    }
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
-    <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div className="flex flex-col items-center justify-center px-6 py-8 mt-10 mx-auto md:h-screen lg:py-0">
 
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -60,10 +99,19 @@ const Login = () => {
                     </div>
                     <button /*disabled={!accepted}*/ type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Login</button>
                     <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                        Already have an account? <a href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Register</a>
+                        Already have an account? <Link to='/register' className="font-medium text-primary-600 hover:underline dark:text-primary-500">Register</Link>
                     </p>
-                </form>
-            </div>
+                      </form>
+                      { user ?
+                     <button onClick={handleSignOut} className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign Out</button> :
+                          <>
+                               <button onClick={handleGoogleSignIn} className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in With Google</button>
+                               <button onClick={handleGithubSignIn} className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center light:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in With Github</button>
+                          </>}
+                      {
+                          user && <div><h2>{user.displayName}</h2></div>
+                      }
+                  </div>
         </div>
     </div>
 </section>
