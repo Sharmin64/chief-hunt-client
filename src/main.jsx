@@ -7,6 +7,7 @@ import router from './Routes/Router'
 import AuthProvider from './Pages/Provider/AuthProvider'
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
    
@@ -14,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <AuthProvider>
     <RouterProvider router={router}></RouterProvider>
       </AuthProvider>
-  
+    
   
   </React.StrictMode>,
 )

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const FoodCategory = ({ category }) => {
 
@@ -7,8 +8,10 @@ const FoodCategory = ({ category }) => {
   const {id,picture,name,yearsOfExperience,numberOfRecipes,likes}=category
   return (
     <div className='container'>
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
-  <figure><img src={picture} alt="chef" /></figure>
+      <div className="card  bg-base-100 shadow-xl image-full">
+        <LazyLoad>
+          <img className='h-[300px]' src={picture} alt="" />
+        </LazyLoad>
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
     <p>Years of experience:{yearsOfExperience}</p>

@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FcLike } from "react-icons/fc";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const FoodDetails = () => {
+  const [disable, setDisable] = useState(false)
+ ;
+  const handleFavourite = () => {
+    toast("Favourite added!")
+    setDisable(true)
+  }
   const details = useLoaderData()
   const {id, picture,name,description,likes,ingredients,yearsOfExperience} = details
   console.log(details);
@@ -19,11 +28,11 @@ const FoodDetails = () => {
     <p> Likes: {likes} <span><FcLike className='inline'/></span></p>
     <p> Details:{description}</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Download</button>
+      <button onClick={handleFavourite} disabled={disable} className="btn btn-primary">Favorite</button>
     </div>
   </div>
 </div>
-     
+<ToastContainer />
     </div>
   );
 };

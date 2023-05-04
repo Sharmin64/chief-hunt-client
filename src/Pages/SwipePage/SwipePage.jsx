@@ -10,15 +10,15 @@ import chef_4 from '../../assets/chef_4.jpg'
 import chef_5 from '../../assets/chef_5.jpg'
 const SwipePage = () => {
   return (
-    <div className='container px-4 py-4 justify-center'>
+    <div className='container px-4 py-4 justify-center bg-gray-300'>
     
       <div className="card ">
       <Swiper
         freeMode={true}
         grabCursor={true}
         modules={[FreeMode]}
-        className='hidden min-h-fit'
-      spaceBetween={10}
+        className='hidden'
+      spaceBetween={5}
       slidesPerView={5}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}

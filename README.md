@@ -16,4 +16,6 @@
 
 ## npm i -S react-lazy-load
 
+## react toastify
+
 ## live link: https://assign-10-chef-hunt-client.web.app/
