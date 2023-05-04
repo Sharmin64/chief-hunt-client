@@ -15,15 +15,7 @@ const FoodDetails = () => {
   <div className="card-body items-center text-center">
     <h2 className="card-title">{name}</h2>
     <p>Experiences: {yearsOfExperience}</p>
-          {/*<li> Food Ingredient:{ingredients}</li>*/}
-          
-          <ul className=' ml-4'>
-
-            {
-              ingredients.map(ingredient => <li key={ingredient.id} className='list-disc' >{ingredient}</li>)
-            }
-
-                </ul>
+          <li> Food Ingredient:{ingredients}</li>
     <p> Likes: {likes} <span><FcLike className='inline'/></span></p>
     <p> Details:{description}</p>
     <div className="card-actions">

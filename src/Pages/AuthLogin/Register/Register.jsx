@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const Register = () => {
-
+const [regError,setRegError]= useState('')
 
     const { createUser } = useContext(AuthContext)
     const [accepted,setAccepted]=useState(false)
@@ -17,14 +17,25 @@ const Register = () => {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
-    console.log(name, email, photo, password);
+      console.log(name, email, photo, password);
+      
+
+if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+    setError("password not valid need 8 char ");
+    return;
+  }
+
+
     createUser(email, password)
       .then(result => {
         const createdUser = result.user;
-        console.log(createdUser);
+          console.log(createdUser);
+          setRegError('')
+          event.target.reset()
       })
       .catch(error => {
-      console.log(error);
+          console.log(error);
+          setRegError(error.message)
     })
     }
     
@@ -44,7 +55,7 @@ const Register = () => {
                         <form onSubmit={handleRegister} className="space-y-4 md:space-y-6" action="#">
                             <div>
                                 <label type="text" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
-                                <input type="name" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name" required="" />
+                                <input type="name" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name" required />
                             </div>
                             <div>
                                 <label type="text" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
@@ -52,16 +63,16 @@ const Register = () => {
                             </div>
                             <div>
                                 <label type="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                                <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="email" required="" />
+                                <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="email" required />
                             </div>
                             <div>
                                 <label type="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                                <input type="password" name="password" id="password" placeholder="password" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                                <input type="password" name="password" id="password" placeholder="password" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                             </div>
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start">
                                     <div className="flex items-center h-5">
-                                        <input onClick={handleAccepted} id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
+                                        <input onClick={handleAccepted} id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required />
                                     </div>
                                     <div className="ml-3 text-sm">
                                         <label type="accept" className="text-gray-500 dark:text-gray-300">accept<a className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> terms and conditions</a></label>
@@ -73,8 +84,9 @@ const Register = () => {
                             <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Already have an account? <Link to='/login' className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign in</Link>
                             </p>
-                        </form>
-                    </div>
+                      </form>
+                  </div>
+                  <p className='text-amber-600'>{regError}</p>
                 </div>
             </div>
         </section>
