@@ -7,6 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 
 
 
+
 const Header = () => {
   const {user,logOut} = useContext(AuthContext)
 
@@ -16,7 +17,7 @@ const Header = () => {
     .catch(error=> console.log(error))
   }
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-50">
     <div className="navbar-start">
       <div className="dropdown">
         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,10 +25,10 @@ const Header = () => {
         </label>
      
       </div>
-      <a className="btn btn-ghost normal-case text-3xl">Food Valley</a>
+      <h2 className="btn btn-ghost normal-case text-4xl">Food Valley</h2>
     </div>
     <div className="navbar-center hidden  items-center lg:flex">
-      <ul className="menu menu-horizontal px-1">
+      <ul className="menu menu-horizontal items-center justify-around px-1">
       <NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/about'> <li>About</li></NavLink>
         <li tabIndex={0}>
         <NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/'><li>Home</li></NavLink>
@@ -40,7 +41,7 @@ const Header = () => {
     <span>
         {user ?
 <Link> <button onClick={handleLogOut}>Logout</button></Link> :
-<NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/login'> <li>Login</li></NavLink>
+<NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/login'> <button className='btn border-4 border-hidden divide-neutral-50 rounded-full mx-4 outline-slate-100 shadow-xl'>Login</button></NavLink>
 }
         </span>
        
