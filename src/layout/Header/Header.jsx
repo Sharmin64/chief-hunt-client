@@ -18,7 +18,7 @@ const Header = () => {
     .catch(error=> console.log(error))
   }
   return (
-    <div className="navbar bg-base-50">
+    <div className="navbar bg-base-50 container">
     <div className="navbar-start">
       <div className="dropdown">
         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -42,13 +42,13 @@ const Header = () => {
     <div className="navbar-end">
     <span>
         {user ?
-<Link> <button onClick={handleLogOut}>Logout</button></Link> :
-<NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/login'> <button className='btn border-4 border-hidden divide-neutral-50 rounded-full mx-4 outline-slate-100 shadow-xl'>Login</button></NavLink>
+<Link> <button className='btn border-4 border-hidden divide-neutral-50 rounded-full mx-4 outline-slate-100 shadow-xl text-lg' onClick={handleLogOut}>Logout</button></Link> :
+<NavLink className={({ isActive }) => (isActive ? 'text-[#848AFE]' : '')} to='/login'> <button className='btn border-4 border-hidden divide-neutral-50 rounded-full mx-4 outline-slate-100 shadow-xl text-lg'>Login</button></NavLink>
 }
         </span>
        
         {user &&
-<FaUserCircle title={user.displayName} style={{ color: '#00d5f2', fontSize:'2rem'}}></FaUserCircle>
+<FaUserCircle title={user.displayName} style={{ color: '#00d5f2', fontSize:'3rem'}}></FaUserCircle>
         }
     </div>
   </div>
