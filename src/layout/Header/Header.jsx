@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Pages/Provider/AuthProvider';
 import { FaUserCircle } from "react-icons/fa";
+import navfood from '../../assets/navfood.png'
 
 
 
@@ -25,7 +26,8 @@ const Header = () => {
         </label>
      
       </div>
-      <h2 className="btn btn-ghost normal-case text-4xl">Food Valley</h2>
+        <h2 className="btn btn-ghost normal-case text-5xl">Food Valley</h2>
+        <img className='inline' src={navfood} alt="" />
     </div>
     <div className="navbar-center hidden  items-center lg:flex">
       <ul className="menu menu-horizontal items-center justify-around px-1">

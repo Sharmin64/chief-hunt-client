@@ -18,4 +18,6 @@
 
 ## react toastify
 
+## react pdf install
+
 ## live link: https://assign-10-chef-hunt-client.web.app/

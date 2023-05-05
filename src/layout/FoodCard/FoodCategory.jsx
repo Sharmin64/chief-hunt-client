@@ -12,10 +12,10 @@ const FoodCategory = ({ category }) => {
         <LazyLoad>
           <img className='h-[300px]' src={picture} alt="" />
         </LazyLoad>
-  <div className="card-body">
-    <h2 className="card-title">{name}</h2>
+  <div className="card-body ">
+    <h2 className="card-title text-2xl">{name}</h2>
     <p>Years of experience:{yearsOfExperience}</p>
-    <p>Recipe:{numberOfRecipes}</p>
+    <p className='leading-tight text-xl'>Recipe:{numberOfRecipes}</p>
     <p>Likes:{likes}</p>
     <div className="card-actions justify-end">
      <Link to={`/categories/${id}`}> <button className="btn btn-primary">View Recipes</button></Link>
