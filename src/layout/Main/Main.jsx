@@ -4,6 +4,7 @@ import chef from "../../assets/chef.jpg";
 import SwipePage from "../../Pages/SwipePage/SwipePage";
 import DeliverFood from "../../Pages/DeliverFood/DeliverFood";
 import FoodService from "../../Pages/FoodService/FoodService";
+import Reservation from "../../Pages/Reservation/Reservation";
 
 const Main = () => {
   return (
@@ -38,7 +39,9 @@ const Main = () => {
       <div className="my-20">
         <DeliverFood />
       </div>
-      <div className="my-20"></div>
+      <div className="my-20">
+        <Reservation />
+      </div>
       <div className="my-20"></div>
     </div>
   );

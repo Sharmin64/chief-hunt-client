@@ -5,9 +5,7 @@ const FoodCard = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://assignment-10-server-side-chef-hunter-sharmin64.vercel.app/categories"
-    )
+    fetch("https://assignment-10-server-side-chef-hunter.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error(error));

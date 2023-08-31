@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 //import { Link } from 'react-router-dom';
-import { AuthContext } from "../../Provider/AuthProvider";
-import { Link } from "react-router-dom";
+import {AuthContext} from "../../Provider/AuthProvider";
+import {Link} from "react-router-dom";
 
 const Register = () => {
   const [regError, setRegError] = useState("");
 
-  const { createUser } = useContext(AuthContext);
+  const {createUser} = useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
 
   const handleRegister = (event) => {
@@ -134,7 +134,6 @@ const Register = () => {
                     >
                       accept
                       <a className="text-xl font-medium text-primary-600 hover:underline dark:text-primary-500">
-                        {" "}
                         terms and conditions
                       </a>
                     </label>

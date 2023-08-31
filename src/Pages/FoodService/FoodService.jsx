@@ -25,7 +25,7 @@ const FoodService = () => {
             quis totam quisquam, minus error repudiandae tenetur corporis?
           </p>
           <div>
-            <button className="btn btn-outline border-0 mt-4 border-b-4">
+            <button className="btn btn-outline border-0 mt-4 border-b-4 peer-odd:shadow-md">
               Order Now
             </button>
           </div>

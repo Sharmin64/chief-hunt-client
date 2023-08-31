@@ -68,7 +68,7 @@ const Header = () => {
             <Link>
               {" "}
               <button
-                className="btn border-4 border-hidden divide-neutral-50 rounded-full mx-4 outline-slate-100 shadow-xl text-lg"
+                className="btn border-4 border-hidden divide-neutral-50 rounded-xl px-8 py-4 mx-4 outline-slate-100 shadow-xl text-lg"
                 onClick={handleLogOut}
               >
                 Logout
@@ -80,7 +80,7 @@ const Header = () => {
               to="/login"
             >
               {" "}
-              <button className="btn border-4 border-hidden divide-neutral-50 rounded-full mx-4 outline-slate-100 shadow-xl text-lg">
+              <button className="btn border-4 border-hidden divide-neutral-50 rounded-full mx-4 outline-slate-100 shadow-xl text-2xl">
                 Login
               </button>
             </NavLink>
