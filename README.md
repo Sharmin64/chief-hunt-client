@@ -20,4 +20,8 @@
 
 ## react pdf install
 
-## live link: https://assign-10-chef-hunt-client.web.app/
+## live link: https://assign-10-chef-hunt-client.web.app
+
+## client side code: https://github.com/Sharmin64/chief-hunt-client
+
+## server side code: https://github.com/Sharmin64/chief-hunt-server

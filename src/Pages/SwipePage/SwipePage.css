@@ -66,6 +66,9 @@ body {
 .heading {
   padding: 1rem 0;
   font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgb(139 92 246);
   text-align: center;
 }
 

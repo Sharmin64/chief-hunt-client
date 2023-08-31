@@ -29,7 +29,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/categories',
-    element: <CategoriesLayout/>,
+    element: <CategoriesLayout />,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: ':id',
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <LoginLayout></LoginLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/login',
@@ -55,6 +57,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <ExtraLayout></ExtraLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/blog',
