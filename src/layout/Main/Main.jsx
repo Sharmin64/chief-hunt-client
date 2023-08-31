@@ -32,14 +32,14 @@ const Main = () => {
       <div className="mt-20 mx-auto min-w-full">
         <SwipePage />
       </div>
-      <div className="my-20 mx-0 max-w-xl">
+      <div className="my-20">
         <FoodService />
       </div>
-      <div className="my-20 mx-0 max-w-xl">
+      <div className="my-20">
         <DeliverFood />
       </div>
-      <div className="my-20 mx-0 max-w-xl"></div>
-      <div className="my-20 mx-0 max-w-xl"></div>
+      <div className="my-20"></div>
+      <div className="my-20"></div>
     </div>
   );
 };

@@ -1,0 +1,14 @@
+.service-bg {
+  background-image: url("../../assets/service/foodWaiter.avif");
+  background-position: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+
+@media only screen and (max-device-width: 1266px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
