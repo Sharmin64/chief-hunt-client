@@ -24,6 +24,7 @@ const Login = () => {
   const location = useLocation();
   console.log(location);
   const from = location.state?.from?.pathname || "/categories/:id";
+  console.log(from);
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -47,6 +48,7 @@ const Login = () => {
         const loggedInUser = result.user;
         console.log(loggedInUser);
         setUser(loggedInUser);
+        navigate(from, {replace: true});
       })
       .catch((error) => {
         console.log("error", error.message);
@@ -58,6 +60,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         setUser(loggedUser);
+        navigate(from, {replace: true});
       })
       .catch((error) => {
         console.log("error", error.message);
@@ -132,7 +135,6 @@ const Login = () => {
                     >
                       accept
                       <a className="text-lg font-medium text-primary-600 hover:underline dark:text-primary-500">
-                        {" "}
                         terms and conditions
                       </a>
                     </label>
@@ -170,27 +172,30 @@ const Login = () => {
                   onClick={handleGoogleSignIn}
                   className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline focus:ring-primary-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center light:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
-                  <FcGoogle style={{fontSize: "3rem", alignItems: "center"}} />
-                  Sign in With Google{" "}
+                  <FcGoogle
+                    className="inline-block"
+                    style={{fontSize: "3rem", alignItems: "center"}}
+                  />
+                  Sign in With Google
                 </button>
                 <button
                   onClick={handleGithubSignIn}
                   className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline focus:ring-primary-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center light:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   <BsGithub
-                    className="flex"
+                    className="flex justify-center items-center"
                     style={{fontSize: "3rem", alignItems: "center"}}
                   />
-                  Sign in With Github{" "}
+                  Sign in With Github
                 </button>
               </>
             )}
-            {user && (
+            {/*{user && (
               <div>
                 <h2>{user.displayName}</h2>
                 <img src={user.photoURL} alt="" />
               </div>
-            )}
+            )}*/}
           </div>
         </div>
       </div>

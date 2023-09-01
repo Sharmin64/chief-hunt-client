@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import FoodCategory from "./FoodCategory";
+import SectionTitle from "../../hooks/SectionTitle";
 
 const FoodCard = () => {
   const [categories, setCategories] = useState([]);
@@ -12,9 +13,10 @@ const FoodCard = () => {
   }, []);
   return (
     <div>
-      <h1 className="text-center mb-8 sm:mb-10 text-5xl font-bold leading-10 uppercase text-purple-500 ">
-        All Cheves
-      </h1>
+      <SectionTitle
+        heading={"All Cheves"}
+        subHeading={"The Most Popular"}
+      ></SectionTitle>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mx-auto sm:w-full">
         {categories.map((category) => (
           <FoodCategory key={category.id} category={category}></FoodCategory>

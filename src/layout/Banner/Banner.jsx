@@ -3,7 +3,7 @@ import restaurant from "../../assets/bannerFood.jpg";
 
 const Banner = () => {
   return (
-    <div className="w-full lg:max-w-full opacity-80">
+    <div className="w-full lg:max-w-full opacity-80 mt-0">
       <div className="mx-auto w-fit">
         <img
           className="bg-center bg-no-repeat bg-gradient-to-r from-cyan-500 to-blue-500"

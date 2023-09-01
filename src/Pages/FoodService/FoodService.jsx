@@ -4,7 +4,7 @@ import "./FoodService.css";
 import SectionTitle from "../../hooks/SectionTitle";
 const FoodService = () => {
   return (
-    <div className="service-bg bg-fixed text-white pt-10 my-10">
+    <div className="service-bg bg-slate-500 bg-opacity-60 bg-fixed text-white pt-10 my-10">
       <SectionTitle
         subHeading="Our best Service"
         heading="Favourite Item"

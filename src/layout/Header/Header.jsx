@@ -13,7 +13,7 @@ const Header = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="navbar bg-gray-200">
+    <div className="navbar bg-gray-400 sticky top-0 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +33,9 @@ const Header = () => {
             </svg>
           </label>
         </div>
-        <h2 className="btn btn-ghost normal-case text-5xl">Food Valley</h2>
+        <h2 className="btn btn-ghost normal-case text-5xl text-white">
+          Food Valley
+        </h2>
         <img className="inline" src={navfood} alt="" />
       </div>
       <div className="navbar-center hidden  items-center lg:flex">

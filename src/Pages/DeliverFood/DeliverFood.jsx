@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "../../hooks/SectionTitle";
-import deliverImg from "../../assets/service/foodService.avif";
+import deliverImg from "../../assets/service/safeFood.avif";
 
 const DeliverFood = () => {
   return (
@@ -24,12 +24,16 @@ const DeliverFood = () => {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores,
             voluptatum!
           </p>
-          <button className=" px-10 py-5 hover:bg-violet-300 cursor-pointer border-b-violet-500  border-b-8 rounded-md border-0 mt-7 text-2xl">
+          <button className=" px-10 py-5 hover:bg-violet-300 cursor-pointer border-b-violet-500  border-b-8 rounded-3xl border-0 mt-7 text-2xl">
             Learn More
           </button>
         </div>
         <div className="md:w-1/2">
-          <img className="lg:w-[500px] sm:w-full" src={deliverImg} alt="" />
+          <img
+            className="lg:w-[500px] sm:w-full rounded-xl"
+            src={deliverImg}
+            alt=""
+          />
         </div>
       </div>
     </>
