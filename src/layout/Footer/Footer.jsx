@@ -11,19 +11,15 @@ const Footer = () => {
           <br />
           <div className="list-none ps-5 space-y-10">
             <li>
-              {" "}
               <FaFacebookF className="text-sky-500 text-5xl"></FaFacebookF>
             </li>
             <li>
-              {" "}
               <FaFacebookMessenger className="text-violet-500 text-5xl"></FaFacebookMessenger>
             </li>
             <li>
-              {" "}
               <FcGoogle className="text-5xl"></FcGoogle>
             </li>
             <li>
-              {" "}
               <FaTwitter className="text-blue-400 text-5xl"></FaTwitter>
             </li>
           </div>
@@ -89,11 +85,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr />
       <div className=" text-center mt-12 mb-32 mx-auto">
         <div className="">
           <p className="font-normal text-xl text-[#fffaf0] mb-5">
-            {" "}
             © Copyright Protected Chef Recipe
           </p>
         </div>

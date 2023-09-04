@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {Link, NavLink} from "react-router-dom";
 import {AuthContext} from "../../Pages/Provider/AuthProvider";
-import {FaUserCircle} from "react-icons/fa";
+//import {FaUserCircle} from "react-icons/fa";
 import navfood from "../../assets/navfood.png";
 
 const Header = () => {
@@ -44,7 +44,6 @@ const Header = () => {
             className={({isActive}) => (isActive ? "text-[#848AFE]" : "")}
             to="/about"
           >
-            {" "}
             <li>About</li>
           </NavLink>
           <li tabIndex={0}>
@@ -58,7 +57,6 @@ const Header = () => {
               className={({isActive}) => (isActive ? "text-[#848AFE]" : "")}
               to="/blog"
             >
-              {" "}
               <li>Blog</li>
             </NavLink>
           </li>
@@ -67,34 +65,30 @@ const Header = () => {
       <div className="navbar-end">
         <span>
           {user ? (
-            <Link>
-              {" "}
+            <>
               <button
                 className="btn border-4 border-hidden divide-neutral-50 rounded-xl px-8 py-4 mx-4 outline-slate-100 shadow-xl text-lg"
                 onClick={handleLogOut}
               >
                 Logout
               </button>
-            </Link>
+              <div>
+                <img
+                  className=" rounded-full w-10"
+                  title={user?.displayName}
+                  src={user?.photoURL}
+                  alt=""
+                />
+              </div>
+            </>
           ) : (
-            <NavLink
-              className={({isActive}) => (isActive ? "text-[#848AFE]" : "")}
-              to="/login"
-            >
-              {" "}
+            <Link to="/login">
               <button className="btn border-4 border-hidden divide-neutral-50 rounded-full mx-4 outline-slate-100 shadow-xl text-2xl">
                 Login
               </button>
-            </NavLink>
+            </Link>
           )}
         </span>
-
-        {user && (
-          <FaUserCircle
-            title={user.displayName}
-            style={{color: "#00d5f2", fontSize: "3rem"}}
-          ></FaUserCircle>
-        )}
       </div>
     </div>
   );

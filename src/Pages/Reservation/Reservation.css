@@ -1,0 +1,6 @@
+.bg-image {
+  background-image: url("../../assets/service/foodBerger.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
